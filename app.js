@@ -37,13 +37,15 @@ const dummyDataCreator = ({howManyElements = 0, modelPath = ''}) => {
 
 
 // cors
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-})
+}) */
 
 // routes
+const Post = require('./models/post');
+
 app.get('/', (req, res, next) => {
     res.status(200).json({ message: 'home page', data: {  }, metadata: { status: 'success' }})
 })
