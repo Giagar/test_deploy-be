@@ -35,6 +35,14 @@ const dummyDataCreator = ({howManyElements = 0, modelPath = ''}) => {
 }
 // dummyDataCreator({howManyElements: 14, modelPath: './models/post.js'})
 
+
+// cors
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+})
+
 // routes
 app.get('/', (req, res, next) => {
     res.status(200).json({ message: 'home page', data: {  }, metadata: { status: 'success' }})
